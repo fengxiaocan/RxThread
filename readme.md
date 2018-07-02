@@ -1,4 +1,4 @@
-##说明:
+# 说明:
 * 一个简化RxJava的模仿器,简单快捷省代码,只适合需要异步调用线程处理数据的调度,复杂的请使用rxJava或rxJava
 *使用方法:
 
@@ -92,3 +92,22 @@
                             //接收器开启,与线程监听器为同一线程,在observeOnMain/observeOnSync中指定
                      }
                  });
+                 
+#2.引入说明:
+        Step 1. Add the JitPack repository to your build file
+        
+        Add it in your root build.gradle at the end of repositories:
+        
+        	allprojects {
+        		repositories {
+        			...
+        			maven { url 'https://jitpack.io' }
+        		}
+        	}
+        	
+        Step 2. Add the dependency
+        
+        	dependencies {
+        	        //implementation 'com.github.fengxiaocan:RxThread:v1.0.0'
+        	        implementation 'com.github.fengxiaocan:RxThread:latest.release'//直接引用最新的
+        	}
