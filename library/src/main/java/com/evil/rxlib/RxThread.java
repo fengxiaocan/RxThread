@@ -162,6 +162,15 @@ public final class RxThread implements Executor {
         return new RxSchedulers<T>(pool,getLocalConfigs()).setSubscriber(subscriber);
     }
 
+    /**
+     * 开启连续任务系列
+     *
+     * @return
+     */
+    public RxQueue subscriber(RxTask... tasks) {
+        return new RxQueue(pool,getLocalConfigs()).setRxTasks(tasks);
+    }
+
     public <T> Future<T> submit(Callable<T> callable) {
         Future<T> result;
         callable = new CallableWrapper<>(getLocalConfigs(),callable);
